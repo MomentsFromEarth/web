@@ -1,0 +1,184 @@
+@import '../../../sass/variables';
+
+.buttons {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+$google-blue: #4285F4;
+.btn-google {
+  color: #fff;
+  background-color: $google-blue;
+  border-color: $google-blue;
+  border-bottom: 2px solid darken($google-blue, 20%);
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    flex-grow: 0;
+    align-content: left;
+    width: 46px;
+    height: 46px;
+  }
+  span {
+    flex-grow: 1;
+    align-self: center;
+  }
+  i {
+    flex-grow: 0;
+    align-content: left;
+  }
+  cursor: pointer;
+  &:hover {
+    background-color: lighten($google-blue, 5%);
+    border-color: lighten($google-blue, 5%);
+    border-bottom: 2px solid darken($google-blue, 15%);
+  }
+}
+
+$facebook-blue: #3b5998;
+.btn-facebook {
+  color: #fff;
+  background-color: $facebook-blue;
+  border-color: $facebook-blue;
+  border-bottom: 2px solid darken($facebook-blue, 20%);
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    flex-grow: 0;
+    align-content: left;
+  }
+  span {
+    flex-grow: 1;
+    align-self: center;    
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    flex-grow: 0;
+    width: 46px;
+    height: 46px;
+    font-size: 24px;
+    align-items: center;
+  }
+  cursor: pointer;
+  &:hover {
+    background-color: lighten($facebook-blue, 5%);
+    border-color: lighten($facebook-blue, 5%);
+    border-bottom: 2px solid darken($facebook-blue, 15%);
+  }
+}
+
+.btn-link-earth {
+  cursor: pointer;
+  color: darken($mfe-earth-green, 10%);
+  background-color: transparent;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn-link-neutral {
+  cursor: pointer;
+  color: $mfe-base-lightened;
+  background-color: transparent;
+  text-decoration: underline;
+  &:hover {
+    color: lighten($mfe-base-lightened, 10%);
+  }
+}
+
+.user-pic {
+  box-shadow: 0 2px 1px 0px $mfe-base-darkened;
+  margin-right: 25px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+$text-area-padding: 15px;
+$info-panel-width: 700px;
+
+.user-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+  padding: 25px;
+  border-radius: 0.15em;
+  margin-bottom: 20px;
+  .user-info-avatar {
+    display: flex;
+    margin-top: 7px;
+    justify-content: center;
+  }
+  .user-info-item {
+    flex-grow: 1;
+    .item {
+      margin-bottom: 10px;
+    }
+    small {
+      margin-left: 5px;
+    }
+  }
+}
+
+.mfe-info-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  h3 {
+    padding: 10px;
+    font-size: 22px;
+    margin: 0px;
+  }
+  .mfe-info-panel {
+    height: 100%;
+    width: $info-panel-width;
+    background-color: $mfe-base-color;
+    border-radius: 0.15em;
+    color: $mfe-base-lightened;
+    border-bottom: 2px solid $mfe-base-darkened;
+    border-right: 0px solid $mfe-base-darkened;
+    padding: 0px;
+    .info-title {
+      text-transform: capitalize;
+    }
+    .text-area {
+      background-color: lighten($mfe-base-lightened, 50%);
+      padding: $text-area-padding;
+      color: $mfe-text-color;
+      border-bottom-left-radius: 0.15em;
+      border-bottom-right-radius: 0.15em;
+    }
+  }
+}
+
+
+@media (max-width: $mfe-mobile-breakpoint) {
+  .mfe-info-container {
+    h3 {
+      font-size: 18px;
+    }
+    .mfe-info-panel {
+      width: 90%;
+      min-width: $info-panel-width / 2;
+      .text-area {
+        font-size: .95em;
+      }
+    }
+  }
+  .user-info-container {
+    flex-direction: column;
+    .user-info-avatar {
+      margin-top: 0px;
+      margin-bottom: 15px;
+    }
+  }
+}

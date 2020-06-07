@@ -1,0 +1,28 @@
+<div class="mfe-info-container">
+    <div class="mfe-info-panel">
+      <h3 class="info-title">Upload</h3>
+        <div class="text-area">
+          <div *ngIf="notification">
+            <div (click)="clearNotification()" class="alert alert-{{notification.type}} upload-alert" role="alert">{{notification.message}}</div>
+          </div>
+          <div>
+            <h3>#1 Choose a moment video to upload</h3>
+            <file-drop headertext="Drop File Here..." customstyle="moment-drop" (onFileDrop)="droppedMoment($event)"></file-drop>
+            <input style="display:none" type="file" accept="video/*" #momentInput (change)="selectedMoment(momentInput.files[0])">
+            <button (click)="momentInput.click()" class="btn btn-block btn-sky">...or, Select from Files</button>
+          </div>
+          <hr>
+          <div *ngIf="file">
+            <hr>
+            <input type="text" class="form-control" [(ngModel)]="momentTitle" placeholder="Title">
+            <textarea class="form-control" rows="3" [(ngModel)]="momentDescription" placeholder="Description"></textarea>
+            <hr>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width.%' : fileUploadProgress }" [attr.aria-valuenow]="fileUploadProgress" [attr.aria-valuemin]="0" [attr.aria-valuemax]="100"></div>
+          </div>
+          <br>
+          <button (click)="uploadMoment()" class="btn btn-block btn-earth">Upload Moment</button>
+        </div>
+    </div>
+  </div>

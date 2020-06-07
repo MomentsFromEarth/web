@@ -1,0 +1,223 @@
+@import '../sass/variables';
+
+$title-size: 34px;
+
+.mfe-header {
+  z-index: 5000;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: $mfe-header-height;
+  margin: 0;
+  background-color: $mfe-base-color;
+  border-bottom: 2px solid $mfe-base-darkened;
+  .info, .upload, .user {
+    cursor: pointer;
+    color: $mfe-base-lightened;
+    font-size: 22px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    text-decoration: none;
+    &:hover {
+      background-color: $mfe-base-lightened;
+      color: $mfe-base-color;
+    }
+    &:active, &:focus {
+      outline: none!important;
+    }
+  }
+  .info {
+    margin-left: 10px;
+    margin-right: 35px;
+  }
+  .upload {
+    margin-right: 15px;
+  }
+  .user {
+    margin-right: 10px;
+    font-size: 20px;
+    &:active, &:focus {
+      outline: none!important;
+    }
+    img {
+      box-shadow: 0 2px 1px 0px $mfe-base-darkened;
+      width: 29px;
+      height: 29px;
+      border-radius: 100%;
+    }
+  }
+  .avatar-user {
+    position:absolute;
+    opacity: 0.0;
+    z-index: -1;
+    &:active, &:focus {
+      outline: none!important;
+    }
+    &.fade-in {
+      position:static;
+      opacity: 1.0;
+      transition: opacity 1s;
+      z-index: auto;
+    }
+    .avatar-dropdown {
+      &:active, &:focus {
+        outline: none!important;
+      }
+      &::after {
+        display: none!important;
+      }
+    }
+    .avatar-dropdown-menu {
+      background-color: $mfe-base-darkened;
+      .avatar-dropdown-item {
+        color: $mfe-base-lightened;
+        font-size: 0.9rem;
+        &:hover, &:focus, &:active {
+          background-color: $mfe-base-color;
+          color: $mfe-earth-green;
+          outline: none!important;
+        }
+      }
+    }
+  }
+
+  .avatar-user-mobile {
+    display: none;
+    position: absolute;
+    opacity: 0.0;
+    z-index: -1;
+    &:active, &:focus {
+      outline: none!important;
+    }
+    &.fade-in {
+      position:static;
+      opacity: 1.0;
+      transition: opacity 1s;
+      z-index: auto;
+    }
+  }
+
+  .title {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    &:active, &:focus {
+      outline: none!important;
+    }
+    cursor: pointer;
+    .lg {
+      display: inline;
+    }
+    .sm {
+      display: none;
+    }
+    span {
+      font-weight: $mfe-font-weight;
+      font-size: $title-size;
+      color: $mfe-base-lightened;
+    }
+    .earth {
+      color: #07f2bb;
+    }
+    .sky {
+      color: #06daf1;
+    }
+    img {
+      position: relative;
+      top: 8px;
+      margin-left: 10px;
+      width: $title-size + 25;
+      height: $title-size + 25;
+      filter: drop-shadow(0px 0.5px 0.5px $mfe-base-darkened);
+    }
+    &:hover {
+      span {
+        .earth {
+          color: #06daf1;
+        }
+        .sky {
+          color: #07f2bb;
+        }
+      }
+    }
+  }
+}
+
+.mfe-container {
+  overflow: scroll;
+  padding-top: $mfe-header-height + 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.mobile-profile-link-container {
+  z-index: 5000;
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 15px;
+  top: $mfe-header-height;
+  left: 0;
+  background-color: $mfe-base-darkened;
+  &.show {
+    display: none!important;
+  }
+  &.hide {
+    display: none!important;
+  }
+  .btn-earth {
+    color: $mfe-base-lightened;
+    text-decoration: none;
+    border-radius: 0.15em;
+    &:hover {
+      background-color: $mfe-base-color;
+      color: $mfe-earth-green;
+    }
+  }
+}
+
+@media (max-width: $mfe-mobile-breakpoint) {
+  .mfe-header {
+    .title {
+      .lg {
+        display: none;
+      }
+      .sm {
+        display: inline;
+      }
+    }
+    .avatar-user {
+      display: none;
+    }
+    .avatar-user-mobile {
+      display: flex;
+    }
+    .user {
+      img {
+        box-shadow: none;
+      }
+    }
+  }
+  .mobile-profile-link-container {
+    display: flex;
+    &.show {
+      display: flex!important;
+    }
+    &.hide {
+      display: none!important;
+    }
+  }
+}

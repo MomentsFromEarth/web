@@ -1,0 +1,21 @@
+<div class="container-fluid mfe-moment-container">
+    <div *ngIf="moment" class="row">
+      <div class="mfe-moment">
+        <iframe width="854" height="480" [src]="youtube(moment.ext_id)" frameborder="0" allowfullscreen></iframe>
+        <div class="info">
+          <h3>{{moment.title}}</h3>
+          <h5>{{moment.creator}}</h5>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="false" class="full-row">
+      <div class="loading">
+        <div class="loading-box">
+          <div class="loading-content">
+            <img src="/assets/images/loading.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

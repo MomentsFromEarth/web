@@ -1,0 +1,11 @@
+<div class="mfe-info-container">
+    <div class="mfe-info-panel">
+      <h3 class="info-title">Account Profile</h3>
+        <div class="text-area">
+          <div class="user-info" *ngIf="profile">
+            <div class="user-info-avatar"><img class="user-pic" [src]="profileAvatar"></div>
+            <h3>{{profile.name}}</h3>
+          </div>
+        </div>
+    </div>
+  </div>

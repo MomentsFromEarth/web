@@ -1,0 +1,32 @@
+<div class="mfe-header">
+  <a routerLink="/info" href="/info" class="info" tabindex="1">
+    <i class="fa fa-info" aria-hidden="true"></i>
+  </a>
+  <a routerLink="/" href="/" class="title" tabindex="2">
+    <span class="lg">Moments from <span class="earth">Earth</span></span>
+    <span class="sm">Mf<span class="earth">E</span></span>
+  </a>
+  <a routerLink="{{profile ? '/upload' : '/account/login' }}" class="upload" tabindex="3">
+    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+  </a>
+  <div class="dropdown user avatar-user" [ngClass]="{ 'fade-in': profile }">
+    <div class="btn btn-xs dropdown-toggle avatar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img [src]="profileAvatar"></div>
+    <div class="dropdown-menu dropdown-menu-right avatar-dropdown-menu">
+      <a class="dropdown-item avatar-dropdown-item" routerLink="/account/profile" href="/account/profile">View Profile</a>
+      <a class="dropdown-item avatar-dropdown-item" (click)="logout($event)" href="#">Logout</a>
+    </div>
+  </div>
+  <a class="user avatar-user-mobile" (click)="showProfileDropdown = !showProfileDropdown" [ngClass]="{ 'fade-in': profile }">
+    <div><img [src]="profileAvatar"></div>
+  </a>
+  <a *ngIf="!profile" href="/account/login" routerLink="/account/login" class="user">
+    <i class="fa fa-user" aria-hidden="true"></i>
+  </a>
+</div>
+<div class="mobile-profile-link-container" [ngClass]="{ show: showProfileDropdown, hide: !showProfileDropdown }">
+  <a class="btn btn-block btn-link btn-earth" (click)="showProfileDropdown = !showProfileDropdown" routerLink="/account/profile" href="#">View Profile</a>
+  <a class="btn btn-block btn-link btn-earth" (click)="logout($event)" href="#">Logout</a>
+</div>
+<div class="mfe-container">
+  <router-outlet></router-outlet>
+</div>

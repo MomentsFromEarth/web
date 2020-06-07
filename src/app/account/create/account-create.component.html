@@ -1,0 +1,41 @@
+<div class="mfe-info-container">
+    <div class="mfe-info-panel">
+      <h3 class="info-title">Account Create</h3>
+        <div class="text-area">
+          <div class="container-fluid">
+            <p>
+              We were unable to find a user account associated with this login, would you like to create a new account? 
+              If you already have a user account it may be associated with another login - please use that one instead.
+            </p>
+            <div class="user-info-container">
+              <div *ngIf="loadingDetails">
+                <div class="loading"></div>
+                <div class="loading-image"><img src="/assets/images/loading.svg"></div>
+              </div>
+              <div *ngIf="!loadingDetails" class="user-info-avatar"><img class="user-pic" [src]="userGravatar"></div>
+              <div *ngIf="loadingDetails" class="user-info-avatar"><img class="user-pic" src="/assets/images/globe-01.svg"></div>
+              <div class="user-info-item">
+                <div class="item">
+                  <input type="text" class="form-control" [(ngModel)]="userName" placeholder="Name" maxlength="32">
+                  <small class="form-text" 
+                  [ngClass]="{ 'text-muted': (userNameValidation === null), 'text-danger': (userNameValidation === false), 'text-success': (userNameValidation === true) }">
+                  Name should contain alphanumeric characters and spaces only
+                  </small>
+                </div>
+                <div>
+                  <input type="email" class="form-control" [(ngModel)]="userEmail" (input)="onEmailChange($event.target.value)" placeholder="Email" [disabled]="userEmailValidation ? true : null">
+                  <small class="form-text" 
+                  [ngClass]="{ 'text-muted': (userEmailValidation === null), 'text-danger': (userEmailValidation === false), 'text-success': (userEmailValidation === true) }">
+                  Email should be in a valid format. We will never share your email with anyone
+                  </small>
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <button (click)="createAccount()" class="btn btn-block btn-earth">Yes, create a new account</button>
+              <button (click)="returnToLogin()" class="btn btn-block btn-link-earth">No, cancel and return to login</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>

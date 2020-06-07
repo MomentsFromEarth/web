@@ -1,0 +1,70 @@
+@import '../../sass/variables';
+
+.mfe-moment-container {
+  height: 100%;
+  .row {
+    justify-content: center;
+  }
+  .full-row {
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+.mfe-moment {
+  cursor: pointer;
+  width: 854px;
+  background-color: $mfe-base-color;
+  border-radius: 0.15em;
+  color: $mfe-base-lightened;
+  border-bottom: 2px solid $mfe-base-darkened;
+  border-right: 0px solid $mfe-base-darkened;
+  iframe {
+    border-top-left-radius: 0.15em;
+    border-top-right-radius: 0.15em;
+    width: 854px;
+    height: 480px;
+  }
+  .info {
+    padding: 10px;
+    h3 {
+      color: lighten($mfe-base-lightened, 10%);
+    }
+  }
+  margin: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .loading-box {
+    border-radius: 0.15em;
+    background-color: $mfe-base-color;
+    border-bottom: 2px solid $mfe-base-darkened;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    .loading-content {
+      border-radius: 0.15em;
+      background-color: white;
+      padding: 20px
+    }
+  }
+}
+
+@media (max-width: $mfe-mobile-breakpoint) {
+  .mfe-moment {
+    width: 350px;
+    iframe {
+      width: 350px;
+      height: 200px;
+    }
+    .info {
+      h3, h5 {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

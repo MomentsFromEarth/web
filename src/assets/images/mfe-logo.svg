@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000px" height="1000px" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="1.70530257e-13" y="1.13686838e-13" width="1000" height="1000" rx="500"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Rectangle">
+                <use fill="#3A3634" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#2D2928" stroke-width="15" x="7.5" y="7.5" width="985" height="985" rx="492.5"></rect>
+            </g>
+            <g id="Group" mask="url(#mask-2)" font-size="460" font-family="Helvetica-Light, Helvetica" font-weight="300">
+                <g transform="translate(101.000000, 224.000000)">
+                    <text id="Mf">
+                        <tspan x="0" y="446" fill="#7D7570">Mf</tspan>
+                    </text>
+                    <text id="E">
+                        <tspan x="517" y="446" fill="#07F2BB">E</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

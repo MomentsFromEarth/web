@@ -1,0 +1,20 @@
+<div class="mfe-info-container">
+  <div class="mfe-info-panel">
+    <h3 class="info-title">Account Login</h3>
+      <div class="text-area">
+        <div class="container-fluid">
+            <div class="buttons">
+              <button class="btn btn-block btn-google" #googleButton (click)="onGoogleLoginClick($event)">
+                <img src="/assets/images/google.svg">
+                <span>Sign in with Google</span>
+              </button>
+              <br>
+              <button class="btn btn-block btn-facebook" (click)="onFacebookLoginClick($event)">
+                <div><i class="fa fa-facebook fa-fw"></i></div>
+                <span>Sign in with Facebook</span>
+              </button>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>

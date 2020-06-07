@@ -1,0 +1,27 @@
+@import '../../sass/variables';
+
+.mfe-oauth-container {
+  height: 100%;
+  .row {
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loading-box {
+    border-radius: 0.15em;
+    background-color: $mfe-base-color;
+    border-bottom: 2px solid $mfe-base-darkened;
+    padding: 10px;
+    font-size: 0.9em;
+    .loading-content {
+      border-radius: 0.15em;
+      background-color: white;
+      padding: 15px
+    }
+  }
+}

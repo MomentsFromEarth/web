@@ -1,0 +1,99 @@
+@import '../../sass/variables';
+
+$text-area-padding: 15px;
+$info-panel-width: 700px;
+
+.mfe-info-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  h3 {
+    padding: 10px;
+    font-size: 22px;
+    margin: 0px;
+  }
+  .mfe-info-panel {
+    height: 100%;
+    width: $info-panel-width;
+    background-color: $mfe-base-color;
+    border-radius: 0.15em;
+    color: $mfe-base-lightened;
+    border-bottom: 2px solid $mfe-base-darkened;
+    border-right: 0px solid $mfe-base-darkened;
+    padding: 0px;
+    .text-area {
+      background-color: lighten($mfe-base-lightened, 50%);
+      padding: $text-area-padding;
+      color: $mfe-text-color;
+      border-bottom-left-radius: 0.15em;
+      border-bottom-right-radius: 0.15em;
+    }
+  }
+}
+
+.bresson-img {
+  margin-top: $text-area-padding;
+  width: $info-panel-width;
+  margin-bottom:$text-area-padding;
+}
+
+.bresson-quote {
+  font-style: italic;
+  padding: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.person-box {
+  margin-top: $text-area-padding;
+  margin-bottom: $text-area-padding;
+  .person {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500;
+    color: $mfe-base-color;
+    img {
+      box-shadow: 0 2px 1px 0px $mfe-base-darkened;
+      margin-right: 10px;
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+    }
+  }
+}
+
+.contact-email {
+  margin-top: 25px;
+  padding: 10px;
+  border-radius: 0.15em;
+  background-color: lighten($mfe-base-lightened, 40%);
+  color: $mfe-base-darkened;
+  a {
+    color: darken($mfe-earth-green, 10%);
+  }
+}
+
+
+@media (max-width: $mfe-mobile-breakpoint) {
+  .mfe-info-container {
+    h3 {
+      font-size: 18px;
+    }
+    .mfe-info-panel {
+      width: 90%;
+      min-width: $info-panel-width / 2;
+      .text-area {
+        font-size: .95em;
+      }
+    }
+  }
+
+  .bresson-img {
+    width: 100%;
+    min-width: $info-panel-width / 2;
+    background-size: $info-panel-width / 2;
+  }
+}

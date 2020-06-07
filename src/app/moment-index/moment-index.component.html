@@ -1,0 +1,22 @@
+<div class="container-fluid mfe-moment-container">
+  <div class="row">
+    <div class="loading" *ngIf="!moments">
+      <div class="loading-box">
+        <div class="loading-content">
+          <img src="/assets/images/loading.svg">
+        </div>
+      </div>
+    </div>
+    <a class="mfe-moment" *ngFor="let m of moments" href="/m/{{m.id}}" routerLink="/m/{{m.id}}">
+      <div class="image-box">
+        <div class="letterbox-top"></div>
+          <img src="https://img.youtube.com/vi/{{m.ext_id}}/hqdefault.jpg">
+        <div class="letterbox-bottom"></div>
+      </div>
+      <div class="info">
+        <h3>{{m.title}}</h3>
+        <h5>{{m.creator}}</h5>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Moments From Earth</title>
+  <base href="/">
+  <!-- Enable bootstrap 4 theme -->
+  <script>window.__theme = 'bs4';</script>
+  <meta name="google-signin-client_id" content="750281339177-0lc6sdev4k4l1vm2q7u6cuvou4vdcqam.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js"></script>
+  <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=460765837628870"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+<body>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId      : '460765837628870',
+        status     : true,
+        cookie     : true,  // enable cookies to allow the server to access session
+        xfbml      : false,  // parse social plugins on this page
+        version    : 'v2.10' // use graph api version 2.8
+      });
+    }
+
+    function callbackUrl (provider) {
+      return location.protocol + "//" + 
+             location.hostname + 
+             (location.port ? ":"+location.port : "") + 
+             "/oauthcallback/" + provider;
+    }
+
+    (function googleInit () {
+      window['gapi'].load('auth2', () => {
+        window['gapi'].auth2.init({
+          client_id: '750281339177-0lc6sdev4k4l1vm2q7u6cuvou4vdcqam.apps.googleusercontent.com',
+          scope: 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/userinfo.profile',
+          status: true,
+          ux_mode: 'redirect',
+          redirect_uri: callbackUrl('google')
+        }).then(GoogleAuth => {
+          window['GoogleAuth'] = GoogleAuth;
+        });
+      });
+    })();
+  </script>
+  <app-root></app-root>
+</body>
+</html>
